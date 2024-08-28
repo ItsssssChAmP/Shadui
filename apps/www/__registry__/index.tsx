@@ -60,6 +60,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "avatar-group": {
+      name: "avatar-group",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/avatar-group")),
+      source: "",
+      files: ["registry/default/ui/avatar-group.tsx"],
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "badge": {
       name: "badge",
       type: "components:ui",
@@ -573,6 +584,39 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/avatar-demo")),
       source: "",
       files: ["registry/default/example/avatar-demo.tsx"],
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "avatar-group-demo": {
+      name: "avatar-group-demo",
+      type: "components:example",
+      registryDependencies: ["avatar"],
+      component: React.lazy(() => import("@/registry/default/example/avatar-group-demo")),
+      source: "",
+      files: ["registry/default/example/avatar-group-demo.tsx"],
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "avatar-group-tooltip": {
+      name: "avatar-group-tooltip",
+      type: "components:example",
+      registryDependencies: ["avatar"],
+      component: React.lazy(() => import("@/registry/default/example/avatar-group-tooltip")),
+      source: "",
+      files: ["registry/default/example/avatar-group-tooltip.tsx"],
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "avatar-group-limited": {
+      name: "avatar-group-limited",
+      type: "components:example",
+      registryDependencies: ["avatar"],
+      component: React.lazy(() => import("@/registry/default/example/avatar-group-limited")),
+      source: "",
+      files: ["registry/default/example/avatar-group-limited.tsx"],
       category: "undefined",
       subcategory: "undefined",
       chunks: []
@@ -3372,6 +3416,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "avatar-group": {
+      name: "avatar-group",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/avatar-group")),
+      source: "",
+      files: ["registry/new-york/ui/avatar-group.tsx"],
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "badge": {
       name: "badge",
       type: "components:ui",
@@ -3885,6 +3940,39 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/avatar-demo")),
       source: "",
       files: ["registry/new-york/example/avatar-demo.tsx"],
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "avatar-group-demo": {
+      name: "avatar-group-demo",
+      type: "components:example",
+      registryDependencies: ["avatar"],
+      component: React.lazy(() => import("@/registry/new-york/example/avatar-group-demo")),
+      source: "",
+      files: ["registry/new-york/example/avatar-group-demo.tsx"],
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "avatar-group-tooltip": {
+      name: "avatar-group-tooltip",
+      type: "components:example",
+      registryDependencies: ["avatar"],
+      component: React.lazy(() => import("@/registry/new-york/example/avatar-group-tooltip")),
+      source: "",
+      files: ["registry/new-york/example/avatar-group-tooltip.tsx"],
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "avatar-group-limited": {
+      name: "avatar-group-limited",
+      type: "components:example",
+      registryDependencies: ["avatar"],
+      component: React.lazy(() => import("@/registry/new-york/example/avatar-group-limited")),
+      source: "",
+      files: ["registry/new-york/example/avatar-group-limited.tsx"],
       category: "undefined",
       subcategory: "undefined",
       chunks: []
