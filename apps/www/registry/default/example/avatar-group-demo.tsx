@@ -16,7 +16,10 @@ export default function AvatarGroupDemo() {
         <AvatarImage src="https://github.com/dpaulos6.png" />
         <AvatarFallback>DP</AvatarFallback>
       </Avatar>
-      <span className="bg-secondary">Tx</span>
+      <Avatar>
+        <AvatarImage src="https://github.com/shuding.png" />
+        <AvatarFallback>SD</AvatarFallback>
+      </Avatar>
     </AvatarGroup>
   )
 }

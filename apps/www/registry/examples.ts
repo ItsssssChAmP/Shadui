@@ -50,12 +50,6 @@ export const examples: Registry = [
     files: ["example/avatar-group-tooltip.tsx"],
   },
   {
-    name: "avatar-group-limited",
-    type: "components:example",
-    registryDependencies: ["avatar"],
-    files: ["example/avatar-group-limited.tsx"],
-  },
-  {
     name: "badge-demo",
     type: "components:example",
     registryDependencies: ["badge"],

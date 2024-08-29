@@ -6,12 +6,44 @@ interface AvatarGroupProps {
   className?: string
   orientation?: "horizontal" | "vertical"
   limit?: number
+  size?: "small" | "medium" | "large"
+  spacing?: string
   children: React.ReactNode
+}
+
+interface AvatarWrapperProps {
+  children: React.ReactNode
+  spacing: string
+  index: number
+}
+
+const AvatarWrapper: React.FC<AvatarWrapperProps> = ({ children, index }) => {
+  return (
+    <div
+      className={cn(
+        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-background bg-background text-foreground"
+      )}
+      style={{
+        zIndex: index !== 0 ? index : undefined,
+      }}
+      role="img"
+      aria-label={`Avatar ${index + 1}`}
+    >
+      {children}
+    </div>
+  )
 }
 
 export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
   (
-    { children, className = "", orientation = "horizontal", limit, ...props },
+    {
+      children,
+      className = "",
+      orientation = "horizontal",
+      limit,
+      spacing = "0.75rem",
+      ...props
+    },
     ref
   ) => {
     const childrenArray = React.Children.toArray(children)
@@ -19,47 +51,20 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
       ? childrenArray.slice(0, limit)
       : childrenArray
 
-    const styledChildren = React.Children.map(
-      limitedChildren,
-      (child, index) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child as React.ReactElement, {
-            className: cn(
-              "relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-background bg-background text-foreground",
-              child.props.className
-            ),
-            style: {
-              zIndex: index !== 0 ? index : undefined,
-              margin:
-                index > 0
-                  ? orientation === "horizontal"
-                    ? "0 0 0 -0.75rem"
-                    : "0 -0.75rem 0 0"
-                  : undefined,
-            },
-          })
-        }
-        return child
-      }
-    )
-
-    if (limit && childrenArray.length > limit) {
-      styledChildren.push(
-        <span
-          key="more"
-          className="relative z-10 -ml-3 flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-background bg-secondary text-foreground"
-        >
-          +{childrenArray.length - limit}
-        </span>
-      )
-    }
+    const styledChildren = limitedChildren.map((child, index) => (
+      <AvatarWrapper key={index} spacing={spacing} index={index}>
+        {child}
+      </AvatarWrapper>
+    ))
 
     return (
       <div
         ref={ref}
         className={cn(
           "flex select-none",
-          orientation === "vertical" ? "flex-col" : "flex-row",
+          orientation === "horizontal"
+            ? `flex-row -space-x-3`
+            : `flex-col -space-y-3`,
           className
         )}
         {...props}
