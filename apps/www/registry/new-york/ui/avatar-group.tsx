@@ -13,7 +13,6 @@ interface AvatarGroupProps {
 
 interface AvatarWrapperProps {
   children: React.ReactNode
-  spacing: string
   index: number
 }
 
@@ -52,7 +51,7 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
       : childrenArray
 
     const styledChildren = limitedChildren.map((child, index) => (
-      <AvatarWrapper key={index} spacing={spacing} index={index}>
+      <AvatarWrapper key={index} index={index}>
         {child}
       </AvatarWrapper>
     ))
