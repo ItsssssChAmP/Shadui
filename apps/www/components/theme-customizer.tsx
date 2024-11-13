@@ -1,10 +1,9 @@
 "use client"
 
 import * as React from "react"
-import template from "lodash.template"
+import { template } from "lodash"
 import { Check, Copy, Moon, Repeat, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-
 import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
 import { copyToClipboardWithMeta } from "@/components/copy-button"
